@@ -15,7 +15,9 @@
         }
 
         async function doSelect() {
-            var sql = 'select * from Tweets order by time desc limit 20';
+            var contents = document.getElementById("textfield").value; 　//contentsの中にtextfieldの内容を入れた
+            var sql = `select * from Tweets where tweet like "${contents}" `;
+
             var objects = await osql.connect(sql);
             console.log(objects);
             var html = '';
@@ -33,6 +35,7 @@
 
 <body>
     <h1>Tweets</h1>
+    <input id="textfield" type="text">
     <button onclick="button1Pressed()">X</button>
     <hr>
     <p id="result">xxxx</p>
