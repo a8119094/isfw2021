@@ -16,9 +16,15 @@
 
         function init() {
             var name = sessionStorage.getItem('username');
+            var userid = sessionStorage.getItem('userid');
             document.getElementById('welcome').innerHTML = 'ようこそ' + name + 'さん';
+            var url = '<a href="update.html?userid=' + userid + '">ユーザ情報変更画面</a>'
+            document.getElementById('update').innerHTML = url;
+
 
         }
+
+
 
 
 
@@ -30,6 +36,7 @@
     <h1>ユーザトップ</h1>
 
     <p id="welcome"></p>
+    <p id="update"></p>
     <hr>
 
 </body>
